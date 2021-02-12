@@ -16,11 +16,9 @@
   </style>
 </head>
 <body>
-
-<div class="jumbotron text-center" style="margin-bottom:0">
-  <h1>AppFest</h1>
-  <p>A guide for the perplex developer</p> 
-</div>
+<x-header>
+    
+</x-header>
 
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
   <a class="navbar-brand" href="/">AppFest</a>

@@ -17,33 +17,9 @@
 </head>
 <body>
 
-<div class="jumbotron text-center" style="margin-bottom:0">
-  <h1>AppFest</h1>
-  <p>A guide for the perplex developer</p> 
-</div>
+  <x-header data="Welcome" />
 
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-  <a class="navbar-brand" href="/">AppFest</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="collapsibleNavbar">
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link active" href="/">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="services">Services</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="about">About</a>
-      </li>  
-      <li class="nav-item">
-        <a class="nav-link" href="contact">Contact</a>
-      </li>   
-    </ul>
-  </div>  
-</nav>
+  <x-navbar data="welcome" />
 
 <div class="container" style="margin-top:30px">
   <div class="row">
@@ -75,10 +51,8 @@
     </div>
   </div>
 </div>
+<x-footer>
 
-<div class="jumbotron text-center" style="margin-bottom:0">
-  <p>&copy; 2021 @ Yusuf Brima</p>
-</div>
-
+</x-footer>
 </body>
 </html>
