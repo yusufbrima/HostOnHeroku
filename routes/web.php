@@ -23,8 +23,8 @@ Route::get('/', function () {
 
 Route::view("about","about");
 
-Route::get('/contact/{message}', function ($message) {
-    return view('contact',["message" => $message]);
+Route::get('/contact', function () {
+    return view('contact');
 });
 
 // Route::view("contact","contact");
@@ -42,3 +42,8 @@ Route::view("services","services");
 //Laravel 8.x syntax
 
 Route::get("users",[UsersController::class, "loadView"]);
+
+
+Route::get('test', function () {
+    return view('test');
+});
