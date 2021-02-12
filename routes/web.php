@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\UsersController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,11 +23,11 @@ Route::get('/', function () {
 
 Route::view("about","about");
 
-// Route::get('/contact', function () {
-//     return view('contact');
-// });
+Route::get('/contact/{message}', function ($message) {
+    return view('contact',["message" => $message]);
+});
 
-Route::view("contact","contact");
+// Route::view("contact","contact");
 
 
 // Route::get('/services', function () {
@@ -35,3 +35,10 @@ Route::view("contact","contact");
 // });
 
 Route::view("services","services");
+
+//Laravel 7.x syntax
+//Route::get("users","Users@index");
+
+//Laravel 8.x syntax
+
+Route::get("users",[UsersController::class, "loadView"]);
