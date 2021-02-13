@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Users</title>
+  <title>{{ env('APP_NAME') }}::Users</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -46,7 +46,17 @@
       <h2>TITLE HEADING</h2>
       <h5>Title description, Dec 7, 2017</h5>
       <div class="fakeimg">Fake Image</div>
-      <p>Some text..</p>
+      <p> 
+        @if(isset($user))
+          @foreach($user as $usr)
+                Hello {{ $usr }} <br />
+          @endforeach
+        @endif 
+        
+        <!-- @for($i = 0; $i <= 10; $i++)
+          Hello {{ $i }} <br />
+        @endfor -->
+      </p>
       <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
     </div>
   </div>
@@ -55,6 +65,10 @@
 <x-footer>
   
 </x-footer>
-
+@csrf
 </body>
+<script>
+  var data =  @json($user);
+  console.log(data);
+</script>
 </html>
