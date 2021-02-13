@@ -8,12 +8,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <style>
-  .fakeimg {
-    height: 200px;
-    background: #aaa;
-  }
-  </style>
+  @include("components.styles");
 </head>
 <body>
 
@@ -24,35 +19,19 @@
 <div class="container" style="margin-top:30px">
   <div class="row">
     <div class="col-sm-4">
-      <h3>Some Links</h3>
-      <p>Lorem ipsum dolor sit ame.</p>
-      <ul class="nav nav-pills flex-column">
-        <li class="nav-item">
-          <a class="nav-link active" href="#">Active</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#">Disabled</a>
-        </li>
-      </ul>
-      <hr class="d-sm-none">
+      <img src="{{ asset('images/undraw_voting_nvu7.svg') }}" class="img-responsive" />
     </div>
     <div class="col-sm-8">
       <h2>TITLE HEADING</h2>
       <h5>Title description, Dec 7, 2017</h5>
       <div class="fakeimg">Fake Image</div>
-      <p> 
+      <p>
         @if(isset($user))
           @foreach($user as $usr)
                 Hello {{ $usr }} <br />
           @endforeach
-        @endif 
-        
+        @endif
+
         <!-- @for($i = 0; $i <= 10; $i++)
           Hello {{ $i }} <br />
         @endfor -->
@@ -63,7 +42,7 @@
 </div>
 
 <x-footer>
-  
+
 </x-footer>
 @csrf
 </body>

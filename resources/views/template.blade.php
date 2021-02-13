@@ -8,16 +8,11 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <style>
-  .fakeimg {
-    height: 200px;
-    background: #aaa;
-  }
-  </style>
+  @include("components.styles");
 </head>
 <body>
 <x-header>
-    
+
 </x-header>
 
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
@@ -35,12 +30,12 @@
       </li>
       <li class="nav-item">
         <a class="nav-link" href="about">About</a>
-      </li>  
+      </li>
       <li class="nav-item">
         <a class="nav-link" href="contact">Contact</a>
-      </li>   
+      </li>
     </ul>
-  </div>  
+  </div>
 </nav>
 
 <div class="container" style="margin-top:30px">
