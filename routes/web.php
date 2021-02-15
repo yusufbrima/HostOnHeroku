@@ -8,6 +8,7 @@ use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\AdminController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -43,20 +44,22 @@ use App\Http\Controllers\RegisterController;
 
 //Laravel 8.x syntax
 
-Route::get("users",[UsersController::class, "index"]);
+Route::get("users",[UsersController::class, "index"])->name('users');
 
-Route::get("contact",[ContactController::class,"index"]);
+Route::get("contact",[ContactController::class,"index"])->name('contact');
 
-Route::get("about",[AboutController::class,"index"]);
+Route::get("about",[AboutController::class,"index"])->name('about');
 
-Route::get("services",[ServiceController::class,"index"]);
+Route::get("services",[ServiceController::class,"index"])->name('services');
 
-Route::get("/",[WelcomeController::class,"index"]);
+Route::get("/",[WelcomeController::class,"index"])->name('index');
 
-Route::get("register",[RegisterController::class,"index"]);
+Route::get("register",[RegisterController::class,"index"])->name('register');
 
-Route::get("login",[LoginController::class,"index"]);
+Route::get("login",[LoginController::class,"index"])->name('login');
 
 Route::get('test', function () {
     return view('test');
-});
+})->name('test');
+
+Route::resource("admin",AdminController::class);

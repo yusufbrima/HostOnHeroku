@@ -6,29 +6,29 @@
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link {{{ ($active=='welcome') ? 'active' : '' }}}" href="/">Home</a>
+        <a class="nav-link {{{ ($active=='welcome') ? 'active' : '' }}}" href="{{{  route('index') }}}">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link {{{ ($active=='services') ? 'active' : '' }}}" href="services">Services</a>
+        <a class="nav-link {{{ ($active=='services') ? 'active' : '' }}}" href="{{{  route('services') }}}">Services</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link {{{ ($active=='users') ? 'active' : '' }}}" href="users">Users</a>
+        <a class="nav-link {{{ ($active=='users') ? 'active' : '' }}}" href="{{{  route('users') }}}">Users</a>
       </li> 
       <li class="nav-item">
-        <a class="nav-link {{{ ($active=='about') ? 'active' : '' }}}" href="about">About</a>
+        <a class="nav-link {{{ ($active=='about') ? 'active' : '' }}}" href="{{{  route('about') }}}">About</a>
       </li>  
       <li class="nav-item">
-        <a class="nav-link {{{ ($active=='contact') ? 'active' : '' }}}" href="contact">Contact</a>
+        <a class="nav-link {{{ ($active=='contact') ? 'active' : '' }}}" href="{{{  route('contact') }}}">Contact</a>
       </li> 
    
     </ul>
 
     <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-                <a class="nav-link {{{ ($active=='login') ? 'active' : '' }}}"  href="login">Login</a>
+                <a class="nav-link {{{ ($active=='login') ? 'active' : '' }}}"  href="{{{  route('login') }}}">Login</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link {{{ ($active=='register') ? 'active' : '' }}}"  href="register">Register</a>
+                <a class="nav-link {{{ ($active=='register') ? 'active' : '' }}}"  href="{{{  route('register') }}}">Register</a>
             </li>
         </ul>
   </div>  
