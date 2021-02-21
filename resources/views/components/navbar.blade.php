@@ -12,15 +12,18 @@
         <a class="nav-link {{{ ($active=='services') ? 'active' : '' }}}" href="{{{  route('services') }}}">Services</a>
       </li>
       <li class="nav-item">
+        <a class="nav-link {{{ ($active=='posts') ? 'active' : '' }}}" href="{{{  route('posts') }}}">Posts</a>
+      </li>
+      <li class="nav-item">
         <a class="nav-link {{{ ($active=='users') ? 'active' : '' }}}" href="{{{  route('users') }}}">Users</a>
-      </li> 
+      </li>
       <li class="nav-item">
         <a class="nav-link {{{ ($active=='about') ? 'active' : '' }}}" href="{{{  route('about') }}}">About</a>
-      </li>  
+      </li>
       <li class="nav-item">
         <a class="nav-link {{{ ($active=='contact') ? 'active' : '' }}}" href="{{{  route('contact') }}}">Contact</a>
-      </li> 
-   
+      </li>
+
     </ul>
 
     <ul class="navbar-nav ml-auto">
@@ -31,6 +34,6 @@
                 <a class="nav-link {{{ ($active=='register') ? 'active' : '' }}}"  href="{{{  route('register') }}}">Register</a>
             </li>
         </ul>
-  </div>  
+  </div>
 
 </nav>
