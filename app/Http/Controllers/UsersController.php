@@ -3,13 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\User;
 class UsersController extends Controller
 {
     //
     public function index(){
-        $data =  ["john","mary","mac","tony","andy","peter"];
-        Return view("users",["user" => $data]);
+        $users =  User::all();
+        Return view("users",["users" => $users]);
     }
 
     public function save(){

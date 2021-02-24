@@ -18,21 +18,23 @@ Users
       <img src="{{ asset('images/undraw_voting_nvu7.svg') }}" class="img-responsive" />
     </div>
     <div class="col-sm-8">
-      <h2>TITLE HEADING</h2>
-      <h5>Title description, Dec 7, 2017</h5>
-      <div class="fakeimg">Fake Image</div>
-      <p>
-        @if(isset($user))
-          @foreach($user as $usr)
-                Hello {{ $usr }} <br />
-          @endforeach
-        @endif
+        @if($users)
+          <table class="table">
+            <tr>
+              <th>Username</th>
+              <th>Email</th>
+              <th>Joined Since</th>
+            </tr>
+            @foreach($users as $user)
+               <tr> 
+                   <td> {{ $user->name }} </td>
+                   <td>  {{ $user->email  }} </td>
+                   <td>  {{ $user->created_at  }} </td>
+               </tr>
 
-        <!-- @for($i = 0; $i <= 10; $i++)
-          Hello {{ $i }} <br />
-        @endfor -->
-      </p>
-      <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+            @endforeach
+            </table>
+        @endif 
     </div>
   </div>
 @endsection

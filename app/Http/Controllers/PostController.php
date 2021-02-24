@@ -15,7 +15,7 @@ class PostController extends Controller
     public function index()
     {
         //
-        $posts  =  Post::withTrashed()->where('id',1)->get();
+        $posts  =  Post::all();//Post::withTrashed()->where('id',1)->get();
 
         return view("posts",["posts" => $posts]);
     }

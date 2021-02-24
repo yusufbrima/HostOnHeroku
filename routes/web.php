@@ -12,6 +12,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\PostController;
 use App\Models\Post;
+use \Auth;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -149,7 +150,7 @@ Route::get('/search/{id}',function($id){
 
 Route::get('create',function(){ 
 
-    Post::create(["title"=>"hello world","body" => "the chief en sheep en soup en sweet"]);
+    Post::create(["title"=>"hello world","body" => "the chief en sheep en soup en sweet","user_id"=>1]);
 
 });
 
@@ -202,3 +203,18 @@ Route::get('restore/{id}',function($id){
     }
 
 });
+
+Route::get('forcedelete/{id}',function($id){ 
+
+    $post =  Post::withTrashed()->where('id',$id);
+    if($post){
+        $post->forceDelete();
+        return "post restored successfully";
+    }else{
+        return "Not found";
+    }
+
+});
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -27,12 +27,29 @@
     </ul>
 
     <ul class="navbar-nav ml-auto">
+        @if (Auth::check())
+          <li class="nav-item">
+                <a class="nav-link {{{ ($active=='index') ? 'active' : '' }}}"  href="{{{  route('index') }}}">Hi {{ Auth::user()['name'] }}</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link {{{ ($active=='logout') ? 'active' : '' }}}"  href="{{ route('logout') }}" onclick="event.preventDefault();
+              document.getElementById('logout-form').submit();">
+                                            Logout
+                </a>
+
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            {{ csrf_field() }}
+                 </form>
+            </li>
+        @else
+
             <li class="nav-item">
                 <a class="nav-link {{{ ($active=='login') ? 'active' : '' }}}"  href="{{{  route('login') }}}">Login</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link {{{ ($active=='register') ? 'active' : '' }}}"  href="{{{  route('register') }}}">Register</a>
             </li>
+        @endif
         </ul>
   </div>
 
