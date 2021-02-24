@@ -12,7 +12,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\PostController;
 use App\Models\Post;
-use \Auth;
+use App\Models\User;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -150,7 +150,7 @@ Route::get('/search/{id}',function($id){
 
 Route::get('create',function(){ 
 
-    Post::create(["title"=>"hello world","body" => "the chief en sheep en soup en sweet","user_id"=>1]);
+    Post::create(["title"=>"hello world 2","body" => "this is a nice way to make laravel apps","user_id"=>1]);
 
 });
 
@@ -218,3 +218,30 @@ Route::get('forcedelete/{id}',function($id){
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/users/{id}/posts',function($id){ 
+    $user =  User::find($id)->post;
+    return $user;
+
+});
+
+Route::get('/posts/{id}/user',function($id){ 
+    $post =  Post::find($id)->user;
+    return $post;
+
+});
+
+
+Route::get('roles',function(){ 
+    $roles =  DB::select("select id,name from roles");
+
+    return $roles;
+
+});
+
+
+Route::get('user/{id}/roles',function($id){ 
+    $user =  User::find($id)->roles;
+    return $user;
+
+});
